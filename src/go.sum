@@ -51,6 +51,8 @@ github.com/kenesparta/multiplyLogic v0.1.0 h1:DMKyi/cDYkzROzsGS1qqpqtB6q2hWt5xmy
 github.com/kenesparta/multiplyLogic v0.1.0/go.mod h1:E/c81jSWKWm7j2u6A70rfLMvn8/pZpZuKz+fWE2Vdkw=
 github.com/kenesparta/multiplyLogic v0.2.0 h1:YJCEUE60JwgqPgvvTs2It0WkfHdj3Mp0yoR5IvtSBR4=
 github.com/kenesparta/multiplyLogic v0.2.0/go.mod h1:E/c81jSWKWm7j2u6A70rfLMvn8/pZpZuKz+fWE2Vdkw=
+github.com/kenesparta/multiplyLogic v0.3.0 h1:jILVaklnrO99LPTcpOvLCBKjcxJXSu4ClFR9BgX60dY=
+github.com/kenesparta/multiplyLogic v0.3.0/go.mod h1:E/c81jSWKWm7j2u6A70rfLMvn8/pZpZuKz+fWE2Vdkw=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
