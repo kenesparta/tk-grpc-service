@@ -1,0 +1,31 @@
+name: Creating a docker image
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: docker login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+          DOCKER_FILENAME: ${{ secrets.DOCKER_FILENAME }}
+        run: |
+          touch $DOCKER_FILENAME
+          echo $DOCKER_PASS > $DOCKER_FILENAME
+          docker login ghcr.io -u $DOCKER_USER --password-stdin < $DOCKER_FILENAME
+          rm $DOCKER_FILENAME
+      - name: docker build
+        run: |
+          ID=$(docker build -q -t ghcr.io/kenesparta/tk_rest_service:latest .)
+          docker tag $ID ghcr.io/kenesparta/tk_grpc_service:$RELEASE_VERSION
+          docker push ghcr.io/kenesparta/tk_grpc_service:$RELEASE_VERSION
+          docker push ghcr.io/kenesparta/tk_grpc_service:latest
+          docker logout
