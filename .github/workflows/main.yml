@@ -22,4 +22,4 @@ jobs:
           go install github.com/golang/protobuf/protoc-gen-go@latest
           sudo apt-get install -y protobuf-compiler
           cd ./src/ && protoc --go_out=plugins=grpc:. proto/multiply.proto
-          docker build -t ghcr.io/kenesparta/tk_grpc_service:latest .
+          cd .. && docker build -t ghcr.io/kenesparta/tk_grpc_service:latest .
