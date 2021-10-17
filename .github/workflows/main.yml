@@ -18,4 +18,5 @@ jobs:
         with:
           go-version: '1.17.0'
       - name: Testing
-        run: make l/tco
+        run: |
+          docker build -t ghcr.io/kenesparta/tk_grpc_service:latest .

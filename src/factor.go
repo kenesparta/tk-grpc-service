@@ -14,7 +14,7 @@ func (s *Server) Multiply(ctx context.Context, product *multiply.Factor) (*multi
 	var (
 		fp = product.GetFirst()
 		sp = product.GetSecond()
-		m = multiplyLogic.Factor{
+		m  = multiplyLogic.Factor{
 			First:  &fp,
 			Second: &sp,
 		}
