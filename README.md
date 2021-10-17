@@ -38,9 +38,9 @@ docker-compose up --detach --remove-orphans --force-recreate
 cd ./src/ ; go test -coverprofile=coverage.out ./... ; go tool cover -html=coverage.out ; rm coverage.out
 ```
 
-# 4. Pulling from Github Docker registry
+# 4. Pulling from Github Docker registry (easy way)
 
-1.Pull the image from
+1. Pull the image from
 
 ```shell
 docker pull ghcr.io/kenesparta/tk_grpc_service:latest
@@ -49,5 +49,5 @@ docker pull ghcr.io/kenesparta/tk_grpc_service:latest
 2. Run the container with the image
 
 ```shell
-docker run --rm -d -p 8085:8085 --name rest_service ghcr.io/kenesparta/tk_grpc_service
+docker run --rm -d -p 8085:8085 --name grpc_service ghcr.io/kenesparta/tk_grpc_service
 ```
