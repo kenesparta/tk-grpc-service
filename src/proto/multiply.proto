@@ -1,0 +1,16 @@
+syntax = "proto3";
+package chat;
+option go_package = "./gen/multiply";
+
+message Factor {
+  double First = 1;
+  double Second = 2;
+}
+
+message Product {
+  double Result = 1;
+}
+
+service MultiplyService {
+  rpc Multiply(Factor) returns (Product) {}
+}
