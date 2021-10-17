@@ -9,6 +9,7 @@ gRPC service for the Multiply Logic ([learn more](https://github.com/kenesparta/
 | 🐙 Docker Compose | 1.29.2  | Required                     |
 | 🐃 GNU Make       | 4.2.1   | Optional                     |
 | ‍🚀 Postman        | 9.0.7   | Optional                     |
+| ‍✨ libprotoc      | 3.6.1   | Optional                     |
 
 # 2. Execute the service
 
@@ -23,6 +24,7 @@ Run `make l/up`
 Run these commands:
 
 ```shell
+cd ./src/ && protoc --go_out=plugins=grpc:. proto/multiply.proto
 docker-compose down --remove-orphans --rmi all
 docker-compose up --detach --remove-orphans --force-recreate
 ```

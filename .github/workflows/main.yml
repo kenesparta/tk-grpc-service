@@ -19,4 +19,6 @@ jobs:
           go-version: '1.17.0'
       - name: Testing
         run: |
+          apt install protobuf-compiler
+          cd ./src/ && protoc --go_out=plugins=grpc:. proto/multiply.proto
           docker build -t ghcr.io/kenesparta/tk_grpc_service:latest .

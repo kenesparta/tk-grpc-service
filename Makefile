@@ -2,6 +2,7 @@ l/build:
 	cd ./src/ && go build .
 
 l/up:
+	cd ./src/ && protoc --go_out=plugins=grpc:. proto/multiply.proto
 	docker-compose down --remove-orphans --rmi all
 	docker-compose up --detach --remove-orphans --force-recreate
 
