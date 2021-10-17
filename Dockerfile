@@ -4,7 +4,7 @@ WORKDIR /grpcService
 
 COPY ./src .
 
-RUN apk add gcc musl-dev protobuf && \
+RUN apk add gcc musl-dev protobuf git && \
     go mod tidy && \
     go get -d -u && \
     go install github.com/golang/protobuf/protoc-gen-go@latest && \
