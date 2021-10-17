@@ -8,6 +8,7 @@ RUN apk add gcc musl-dev protobuf git && \
     go mod tidy && \
     go get -d -u && \
     go install github.com/golang/protobuf/protoc-gen-go@latest && \
+    protoc --go_out=plugins=grpc:. proto/multiply.proto && \
     go test ./... -cover && \
     go build .
 
