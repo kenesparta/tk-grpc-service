@@ -34,7 +34,7 @@ jobs:
           cd ..
       - name: docker build
         run: |
-          ID=$(docker build -q -t ghcr.io/kenesparta/tk_rest_service:latest .)
+          ID=$(docker build -q -t ghcr.io/kenesparta/tk_grpc_service:latest .)
           docker tag $ID ghcr.io/kenesparta/tk_grpc_service:$RELEASE_VERSION
           docker push ghcr.io/kenesparta/tk_grpc_service:$RELEASE_VERSION
           docker push ghcr.io/kenesparta/tk_grpc_service:latest
