@@ -2,6 +2,8 @@ l/build:
 	cd ./src/ && go build .
 
 l/up:
+	go install github.com/golang/protobuf/protoc-gen-go@latest
+	sudo apt-get install -y protobuf-compiler
 	cd ./src/ && protoc --go_out=plugins=grpc:. proto/multiply.proto
 	docker-compose down --remove-orphans --rmi all
 	docker-compose up --detach --remove-orphans --force-recreate
@@ -18,4 +20,4 @@ l/tch:
 # Run the overall test coverage report on the console
 # Requires a golang compiler installed
 l/tco:
-	cd ./src/ ; go test -v -coverpkg=./... -coverprofile=profile.cov ./... ; go tool cover -func profile.cov ; rm profile.cov
+	cd ./src/ ; go test -v -coverpkg=. -coverprofile=profile.cov . ; go tool cover -func profile.cov ; rm profile.cov
